@@ -1,0 +1,11 @@
+version: '3'
+services:
+  demand-forecasting-challenge:
+    build: .
+    image: demand-forecasting-challenge
+    volumes:
+      - ./:/demand-forecasting-challenge
+    ports:
+      - "8888:8888"
+    working_dir: /demand-forecasting-challenge
+    command: jupyter notebook --ip=0.0.0.0 --port=8888 --allow-root
